@@ -1,0 +1,47 @@
+stock-1:
+	stock_id
+	market_id
+	item_id
+	price
+	quantity
+
+market-2:
+	market_id
+	name
+	location
+
+item-3:
+	item_id
+	brand_id
+	model_id
+	name
+	description
+	type  (on floor on roof)
+
+brand-4:
+	brand_id
+	name
+
+model-5:
+	model_id
+	model_name
+	model_path
+	model_obj
+
+user-6:
+	user_id
+	username
+	email
+	password
+
+receipt_item-7:
+	receipt_item_id
+	receipt_id
+	quantity
+	price_per_item
+	total
+
+receipt-8:
+	receipt_id
+	market_id
+	total
