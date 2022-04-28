@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile
 from app.database.database_manipulation import DatabaseManipulation
 import sqlite3
 from typing import List
-
+import colorific
 
 # SQLALCHEMY_DATABASE_URL = "test.db"
 # # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
@@ -47,3 +47,16 @@ def insert_items(table_name: str, values: list):
 @app.get("/items/{item_id}")
 def read_item(item_id: int):
     return database_manipulation.getItemById(item_id)
+
+
+@app.post("/files/")
+async def create_file(file: UploadFile = File(...)):
+    try:
+        palette = colorific.extract_colors(file.file, min_prominence=0.1)
+        colors = []
+        for p in palette[0]:
+            colors.append({"prominence":p[1],"rgb_color":p[0],"hex_color": '#%02x%02x%02x' % p[0]})
+        return colors
+    except Exception as e:
+        return e
+    
