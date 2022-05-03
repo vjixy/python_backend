@@ -1,4 +1,4 @@
-
+from app.models.item import Item
 
 class DatabaseManipulation():
     def __init__(self, con) -> None:
@@ -44,11 +44,14 @@ class DatabaseManipulation():
         cur = self.con.cursor()
         cur.execute('''CREATE TABLE IF NOT EXISTS item
                             (item_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                brand text NOT NULL,
-                                model text NOT NULL,
                                 name text NOT NULL,
+                                brand text NOT NULL,
+                                type text NOT NULL,
                                 description text NOT NULL,
-                                type text NOT NULL)''')
+                                model_path text NOT NULL,
+                                model_type text NOT NULL,
+                                price float NOT NULL
+                                )''')
 
     def create_brand_database(self):
         cur = self.con.cursor()
@@ -113,6 +116,21 @@ class DatabaseManipulation():
     def selectAny(self, table_name):
         cur = self.con.cursor()
         return cur.execute("SELECT * FROM " + table_name ).fetchall()
+
+    def getItems(self):
+        item_list = self.selectAny("item")
+        item_dict = {}
+        for item in item_list:
+            item_dict[item[0]] = Item(
+                name = item[1],
+                brand = item[2],
+                type = item[3],
+                description = item[4],
+                model_path = item[5],
+                model_type = item[6],
+                price = item[7]
+            )
+        return item_dict
 
     def getItemById(self, item_id):
         cur = self.con.cursor()

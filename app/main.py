@@ -28,10 +28,17 @@ def read_root():
 def get_item():
     return {"Hello": "One Item"}
 
+# @app.get("/items")
+# def get_items(table_name: str):
+#     try:
+#         return database_manipulation.selectAny(table_name)
+#     except Exception as e:
+#         return e
+
 @app.get("/items")
-def get_items(table_name: str):
+def get_items():
     try:
-        return database_manipulation.selectAny(table_name)
+        return database_manipulation.getItems()
     except Exception as e:
         return e
 
