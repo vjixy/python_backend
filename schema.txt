@@ -16,6 +16,7 @@ item-3:
 	model_id
 	name
 	description
+	category
 	type  (on floor on roof)
 
 brand-4:
@@ -45,3 +46,22 @@ receipt-8:
 	receipt_id
 	market_id
 	total
+
+
+3 types: object, mask, disk
+5 types: item, mask, disk, tinder, checkout
+
+Requests
+[
+  1,"Chair","none","item","furniture","Very comfortable chair","models/office_chair_blue.glb","local","none","none",55
+  2,"Star War","none","movie","furniture","Good Film","models/cd_box_star_war.glb","local","none","none",15
+  3,"Roumbi Mask","none","mask","furniture","Good Mask","models/roumbi_mask2.glb","local","textures/empty.png","none",20
+  4,"Crouch","none","item","furniture","Very comfortable Crouch","models/crouch_blue","local","none","none",50
+]
+
+[
+  [1,"Chair","none","item","furniture","Very comfortable chair","models/office_chair_blue.glb","local","none","none",55],
+  [2,"Star War","none","movie","furniture","Good Film","models/cd_box_star_war.glb","local","none","none",15],
+  [3,"Roumbi Mask","none","mask","furniture","Good Mask","models/roumbi_mask2.glb","local","textures/empty.png","none",20],
+  [4,"Crouch","none","item","furniture","Very comfortable Crouch","models/crouch_blue","local","none","none",50]
+]

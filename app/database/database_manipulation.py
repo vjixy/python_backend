@@ -47,9 +47,12 @@ class DatabaseManipulation():
                                 name text NOT NULL,
                                 brand text NOT NULL,
                                 type text NOT NULL,
+                                category text NOT NULL,
                                 description text NOT NULL,
                                 model_path text NOT NULL,
-                                model_type text NOT NULL,
+                                model_location text NOT NULL,
+                                model_extras text NOT NULL,
+                                texture_path text NOT NULL,
                                 price float NOT NULL
                                 )''')
 
@@ -119,17 +122,26 @@ class DatabaseManipulation():
 
     def getItems(self):
         item_list = self.selectAny("item")
+        print(item_list)
         item_dict = {}
-        for item in item_list:
-            item_dict[item[0]] = Item(
-                name = item[1],
-                brand = item[2],
-                type = item[3],
-                description = item[4],
-                model_path = item[5],
-                model_type = item[6],
-                price = item[7]
-            )
+        try:
+            for item in item_list:
+                item_dict[item[0]] = Item(
+                    name = item[1],
+                    brand = item[2],
+                    type = item[3],
+                    category = item[4],
+                    description = item[5],
+                    model_path = item[6],
+                    model_location = item[7],
+                    model_extras = item[8],
+                    texture_path = item[9],
+                    price = item[10]
+                )
+
+        except Exception as e:
+            raise Exception("found error: "+ e.__str__())
+
         return item_dict
 
     def getItemById(self, item_id):
