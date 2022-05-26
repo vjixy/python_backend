@@ -57,11 +57,26 @@ Requests
   2,"Star War","none","movie","furniture","Good Film","models/cd_box_star_war.glb","local","none","none",15
   3,"Roumbi Mask","none","mask","furniture","Good Mask","models/roumbi_mask2.glb","local","textures/empty.png","none",20
   4,"Crouch","none","item","furniture","Very comfortable Crouch","models/crouch_blue","local","none","none",50
+
+
 ]
 
+
+
+
+
+
+
 [
-  [1,"Chair","none","item","furniture","Very comfortable chair","models/office_chair_blue.glb","local","none","none",55],
-  [2,"Star War","none","movie","furniture","Good Film","models/cd_box_star_war.glb","local","none","none",15],
-  [3,"Roumbi Mask","none","mask","furniture","Good Mask","models/roumbi_mask2.glb","local","textures/empty.png","none",20],
-  [4,"Crouch","none","item","furniture","Very comfortable Crouch","models/crouch_blue","local","none","none",50]
+  [1,"Chair","none","item","furniture","Very comfortable chair","models/office_chair_blue.glb","local","models/office_chair_blue2.glb","@drawable/office_chair_texture",55],
+  [2,"Musa","none","item","furniture","beautiful Musa","models/musa.glb","local","models/e_musa.glb","@drawable/musa_texture",30],
+  [3,"Sofa","none","item","furniture","Very comfortable sofa","models/sofa.glb","local","models/e_sofa.glb","@drawable/sofa",110],
+  [4,"Zukka","none","item","furniture","Very comfortable zukka","models/zukka.glb","local","models/e_zukka.glb","@drawable/zukka_texture",40],
+  [5,"Couch","none","item","furniture","Very comfortable Crouch","models/crouch_blue.glb","local","models/crouch_blue.glb","@drawable/couch_texture",50],
+  [6,"Roumbi","none","mask","mask","Good Mask","models/roumbi_mask2.glb","local","textures/empty.png","@drawable/robin_mask_texture",20],
+  [7,"Plague","none","mask","mask","Good Mask","models/plague_mask.glb","local","textures/empty.png","@drawable/plague_mask_texture",20],
+  [8,"Star War","none","movie","movie","Good Film","models/cd_box_star_war.glb","local","@raw/star_wars","@drawable/star_war_movie_texture",15],
+  [9,"Ice Age","none","movie","movie","Good Film","models/cd_box_ice_age_village.glb","local","@raw/ice_age","@drawable/ice_age_movie",20],
+  [10,"Shrek","none","movie","movie","Good Film","models/cd_box_shrek.glb","local","@raw/sherk_forever","@drawable/shrek_movie",25],
+  [11,"Pumpkins Head","none","checkout","checkout","PAY PAY PAY","models/checkOut.glb","local","","@drawable/checkout_texture",0]
 ]

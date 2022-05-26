@@ -107,7 +107,7 @@ class DatabaseManipulation():
 
 
     def addAnny(self, table_name, values):
-        print("Hello")
+        self.create_item_database()
         try:
             cur = self.con.cursor()
             cur.execute("INSERT INTO " + table_name + " VALUES (" + self._values_to_str(values) + ")")
@@ -119,6 +119,9 @@ class DatabaseManipulation():
     def selectAny(self, table_name):
         cur = self.con.cursor()
         return cur.execute("SELECT * FROM " + table_name ).fetchall()
+    
+    def deleteAny(self, table_name):
+        self.con.execute("DROP TABLE "+ table_name)
 
     def getItems(self):
         item_list = self.selectAny("item")

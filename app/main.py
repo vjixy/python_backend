@@ -68,6 +68,17 @@ def insert_items(key: str, values: List[List]):
 # def read_item(item_id: int):
 #     return database_manipulation.getItemById(item_id)
 
+@app.delete("/delete_items")
+def insert_items(key: str):
+    try:
+        if(key == "166278372972930230"):
+            
+            database_manipulation.deleteAny("item")
+            return "Items Added"
+        return "Wrong Key !!!"
+    except Exception as e:
+        return e
+    
 
 @app.post("/files/")
 async def create_file(file: UploadFile = File(...)):
